@@ -1,0 +1,18 @@
+{
+    "url": "https://webglsamples.org/aquarium/aquarium.html",
+    "width": 1024,
+    "height": 768,
+    "resizable" : true,
+    "title": true,
+    "title_text": "My App",
+    "title_style": "hiddenInset",
+    "title_symbol_color": "",
+    "title_bar_color": "",
+    "full_screen": false,
+    "center": false,
+    "posx": 0,
+    "posy": 0,
+    "strict_url": false,
+    "url_style": "https://www.google.com/",
+    "icon": ""
+}

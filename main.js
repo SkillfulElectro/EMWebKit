@@ -1,3 +1,5 @@
+// main.js
+
 const { app, BrowserWindow, ipcMain , Menu , session } = require('electron');
 const path = require('path');
 const fs = require('fs');
@@ -8,7 +10,7 @@ const options = {
     width: 800,
     height: 600,
     resizable : true ,
-    title: true,
+    title: true, // Changed default to true
     title_text: 'EMWebKit',
     title_style: 'hiddenInset',
     title_symbol_color: '',
@@ -26,7 +28,7 @@ function loadConfig(configPath) {
     try {
         const configContents = fs.readFileSync(configPath, 'utf8');
         const configOptions = JSON.parse(configContents);
-        
+        // Merge default options with the ones from the config file
         Object.assign(options, configOptions);
     } catch (error) {
         console.error('Error loading config file:', error);
@@ -50,17 +52,17 @@ function createWindow() {
         title: options.title_text,
         titleBarStyle: options.title_style,
         titleBarOverlay: {
-            color: options.title_bar_color, 
+            color: options.title_bar_color, // Set your desired color
             symbolColor: options.title_symbol_color,
-        }, 
-        frame: options.title, 
+        }, // Color for window control symbols (minimize, maximize, close)
+        frame: options.title, // Show or hide the title bar based on the title option
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         }
     };
     
 
-    
+    // Set position or center based on options.center
     if (options.center) {
         mainWindowOptions.center = true;
     } else {
@@ -73,7 +75,6 @@ function createWindow() {
         return newURL.startsWith(options.url_style);
     };
 
-    // if smth like native menu bar is needed create it with html , css and js
     const customMenuTemplate = [];
     const customMenu = Menu.buildFromTemplate(customMenuTemplate);
     Menu.setApplicationMenu(customMenu);
@@ -93,14 +94,14 @@ function createWindow() {
         mainWindow.webContents.on('will-navigate', (event, newURL) => {
             if (!isUrlAllowed(newURL)) {
                 event.preventDefault();
-                mainWindow.loadURL(options.url_style); 
+                mainWindow.loadURL(options.url_style); // Redirect back to the original URL
             }
         });
 
         mainWindow.webContents.on('new-window', (event, newURL) => {
             if (!isUrlAllowed(newURL)) {
                 event.preventDefault();
-                mainWindow.loadURL(options.url_style); 
+                mainWindow.loadURL(options.url_style); // Redirect back to the original URL
             }
         });
     }
@@ -123,9 +124,11 @@ function createWindow() {
         const webContents = event.sender
         const win = BrowserWindow.fromWebContents(webContents)
         console.log(value)
-        if (value == 'true') { 
+        if (value == 'true') {
+            // Set the window to full screen
             win.setFullScreen(true);
         } else {
+            // Exit full screen
             win.setFullScreen(false);
         }
     })
@@ -143,8 +146,8 @@ function createWindow() {
         const webContents = event.sender
         const win = BrowserWindow.fromWebContents(webContents);
         titleBarOverlay = {
-            color: back_color, 
-            symbolColor: symbol_color, 
+            color: back_color, // Set your desired title bar color
+            symbolColor: symbol_color, // Set the color for window control symbols
         }
         win.setTitleBarOverlay(titleBarOverlay);
     })
@@ -164,6 +167,22 @@ function createWindow() {
             win.setResizable(true);
         }else{
             win.setResizable(false);
+        }
+    })
+
+    ipcMain.on('win-center' , (event) =>{
+        const webContents = event.sender
+        const win = BrowserWindow.fromWebContents(webContents)
+        win.center();
+    })
+
+    ipcMain.on('win-size' , (event , height , width , animate) =>{
+        const webContents = event.sender
+        const win = BrowserWindow.fromWebContents(webContents)
+        if (animate == 'true'){
+            win.setSize(width, height, true);
+        }else{
+            win.setSize(width, height, false);
         }
     })
 }

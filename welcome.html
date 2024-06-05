@@ -72,7 +72,7 @@
             <br><br>
             To restrict navigation to other websites and keep users within your designated web environment, set 'strict_url' to true. Then, use 'url_style' to define the URL pattern that should be consistently checked upon navigation.
             <br><br>
-            for changing title dynamically: window.Backend.setTitle(title) , for full screen : window.Backend.full_screen("true") , for closing the app : window.Backend.close_window("true") , for changing color of title bar overlay dynamically in your MUTEXIS_KIT.json file set the title_style to hidden and use this window.Backend.title_bar_overlay("#051be1" , "#051be1") func in the frontend , you can use title_style hiddenInset for normal one , for minimizing the window window.Backend.win_minimize('true') , for making window resizable window.Backend.win_resizable('true') and vice versa
+            for changing title dynamically: window.Backend.setTitle(title) , for full screen : window.Backend.full_screen("true") , for closing the app : window.Backend.close_window("true") , for changing color of title bar overlay dynamically in your MUTEXIS_KIT.json file set the title_style to hidden and use this window.Backend.title_bar_overlay("#051be1" , "#051be1") func in the frontend , you can use title_style hiddenInset for normal one , for minimizing the window window.Backend.win_minimize('true') , for making window resizable window.Backend.win_resizable('true') and vice versa , for making window come to the center window.Backend.win_center() , for setting width and height window.Backend.win_size(1000 , 1000 , "false") if true is set window will change height smoothly
         </p>
     </div>
     <!--
@@ -80,7 +80,8 @@
     <script>
         const fss = document.getElementById('btn1')
         fss.addEventListener('click', () => {
-            window.Backend.win_resizable('false')
+            
+            window.Backend.win_size(1000 , 1000 , "false")
         })
     </script>
     -->

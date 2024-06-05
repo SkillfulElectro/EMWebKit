@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain , Menu , session } = require('electron');
+const { app, BrowserWindow, ipcMain , Menu , session , shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
@@ -17,8 +17,8 @@ const options = {
     center: true,
     posx: 0,
     posy: 0,
-    strict_url: false,
-    url_style: '',
+    strict_url: true,
+    url_style: `file://${path.join(__dirname, 'welcome.html')}`,
     icon : '_8452d7c4-ac7a-42e0-9237-5858d1716314.jpeg'
 };
 
@@ -74,13 +74,16 @@ function createWindow() {
     }
 
     const mainWindow = new BrowserWindow(mainWindowOptions);
-    const isUrlAllowed = (newURL) => {
-        return newURL.startsWith(options.url_style);
-    };
 
     const customMenuTemplate = [];
     const customMenu = Menu.buildFromTemplate(customMenuTemplate);
     Menu.setApplicationMenu(customMenu);
+
+    
+    
+    const isUrlAllowed = (newURL) => {
+        return newURL.startsWith(options.url_style);
+    };
 
     var urlToLoad;
     if (options.strict_url){
@@ -97,6 +100,7 @@ function createWindow() {
         mainWindow.webContents.on('will-navigate', (event, newURL) => {
             if (!isUrlAllowed(newURL)) {
                 event.preventDefault();
+                shell.openExternal(newURL);
                 mainWindow.loadURL(options.url_style); // Redirect back to the original URL
             }
         });
@@ -104,6 +108,7 @@ function createWindow() {
         mainWindow.webContents.on('new-window', (event, newURL) => {
             if (!isUrlAllowed(newURL)) {
                 event.preventDefault();
+                shell.openExternal(newURL);
                 mainWindow.loadURL(options.url_style); // Redirect back to the original URL
             }
         });

@@ -197,6 +197,10 @@ app.whenReady().then(() => {
     });
 });
 
+// just to make sure
+app.on('will-quit' , () => {
+    session.defaultSession.clearStorageData()
+})
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {

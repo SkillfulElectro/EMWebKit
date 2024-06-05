@@ -26,11 +26,11 @@ and you will see the setup file :)
 EMWebKit is a powerful framework designed for creating cross-language GUI applications using web technologies. Whether you’re working with Python, Java, C++, or any other language, EMWebKit allows you to build rich graphical user interfaces (GUIs) effortlessly. Let’s dive into the details:
 
 ### Language Agnostic:
-No need to add language-specific bindings or wrappers. EMWebKit acts as a bridge between your application and the GUI layer, making it accessible from any programming language.
+- No need to add language-specific bindings or wrappers. EMWebKit acts as a bridge between your application and the GUI layer, making it accessible from any programming language.
 Use your favorite language without limitations.
 
 ### Web Technology Integration:
-Leverage the strength of web technologies (HTML, CSS, JavaScript) to create dynamic and responsive interfaces.
+- Leverage the strength of web technologies (HTML, CSS, JavaScript) to create dynamic and responsive interfaces.
 Tap into the vast ecosystem of web frameworks and libraries.
 
 ### GUI Application :

@@ -36,10 +36,13 @@ Tap into the vast ecosystem of web frameworks and libraries.
 ### GUI Application :
 - to make cross-lang without needing to add language bindings , it turned out as an application which will be started as process and gets gui content from server which will be your application which hosted http server , welcome.html file will guide you
 
+## Upcoming features :
+- extensions are coming to make everything secure , stay tuned ; not gonna let anyone steal your ui source code ;)
+
 ## Notes:
 - this project is based on the ElectronJS , Electron-builder and Chromium . these are choosen because of simplicity and cross-platform capabilities of them
 - the idea of this project was to provide a simple way to create gui applications with any language and have the power to use web tech because of their strong community and tons of frameworks availability
-- the project does not have so much security features for keeping your html , css and js code safe because of its open source nature so if you want to use it and keep your source code safe , add authentication to the project so other people dont be able to replace the project with malicious one and also compile your html , css and js file
+- for now the project does not have so much security features for keeping your html , css and js code safe because of its open source nature so if you want to use it and keep your source code safe , add authentication to the project so other people dont be able to replace the project with malicious one and and steal your ui code also compile your html , css and js file
 - this project is not aiming to have strict rules for config files , they can have any names based on your use cases
 - if there is any features that project is lacking of , i would be glad to you help me in making this project a perfect one but we all know nothing will be perfect
 

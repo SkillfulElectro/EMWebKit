@@ -50,10 +50,10 @@ function createWindow() {
         title: options.title_text,
         titleBarStyle: options.title_style,
         titleBarOverlay: {
-            color: options.title_bar_color, // Set your desired color
+            color: options.title_bar_color, 
             symbolColor: options.title_symbol_color,
-        }, // Color for window control symbols (minimize, maximize, close)
-        frame: options.title, // Show or hide the title bar based on the title option
+        }, 
+        frame: options.title, 
         webPreferences: {
             // if you want it be possible to change stuff in the engine backend , remove the line below
             nodeIntegration: false ,
@@ -62,7 +62,7 @@ function createWindow() {
     };
     
 
-    // Set position or center based on options.center
+    
     if (options.center) {
         mainWindowOptions.center = true;
     } else {
@@ -125,10 +125,10 @@ function createWindow() {
         const win = BrowserWindow.fromWebContents(webContents)
         console.log(value)
         if (value == 'true') {
-            // Set the window to full screen
+            
             win.setFullScreen(true);
         } else {
-            // Exit full screen
+            
             win.setFullScreen(false);
         }
     })
@@ -146,8 +146,8 @@ function createWindow() {
         const webContents = event.sender
         const win = BrowserWindow.fromWebContents(webContents);
         titleBarOverlay = {
-            color: back_color, // Set your desired title bar color
-            symbolColor: symbol_color, // Set the color for window control symbols
+            color: back_color, 
+            symbolColor: symbol_color,
         }
         win.setTitleBarOverlay(titleBarOverlay);
     })

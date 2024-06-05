@@ -34,7 +34,9 @@ Use your favorite language without limitations.
 Tap into the vast ecosystem of web frameworks and libraries.
 
 ### GUI Application :
-- to make cross-lang without needing to add language bindings , it turned out as an application which will be started as process and gets gui content from server which will be your application which hosted http server , welcome.html file will guide you https://skillfulelectro.github.io/EMWebKit/welcome.html
+- to make cross-lang without needing to add language bindings , it turned out as an application which will be started as process and gets gui content from server which will be your application which hosted http server , welcome.html file will guide you : 
+
+https://skillfulelectro.github.io/EMWebKit/welcome.html
 
 ## Upcoming features :
 - extensions are coming to make everything secure , stay tuned ; not gonna let anyone steal your ui source code ;)

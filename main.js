@@ -193,6 +193,12 @@ function createWindow() {
             win.setSize(width, height, false);
         }
     })
+
+    ipcMain.on('win-icon' , (event , ic_path) =>{
+        const webContents = event.sender
+        const win = BrowserWindow.fromWebContents(webContents)
+        win.setIcon(ic_path);
+    })
 }
 
 app.whenReady().then(() => {

@@ -1,3 +1,5 @@
+// main.js
+
 const { app, BrowserWindow, ipcMain , Menu , session , shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
@@ -8,7 +10,7 @@ const options = {
     width: 800,
     height: 600,
     resizable : true ,
-    title: true, 
+    title: true, // Changed default to true
     title_text: 'EMWebKit',
     title_style: 'hiddenInset',
     title_symbol_color: '',
@@ -22,11 +24,15 @@ const options = {
     icon : '_8452d7c4-ac7a-42e0-9237-5858d1716314.jpeg'
 };
 
+const currentTime = new Date().getTime(); // Get the current timestamp
+const customPartition = `my-session-${currentTime}`;
+var custtomSession
+
 function loadConfig(configPath) {
     try {
         const configContents = fs.readFileSync(configPath, 'utf8');
         const configOptions = JSON.parse(configContents);
-        
+        // Merge default options with the ones from the config file
         Object.assign(options, configOptions);
     } catch (error) {
         console.error('Error loading config file:', error);
@@ -39,7 +45,7 @@ function createWindow() {
         loadConfig(process.argv[configIndex + 1]);
     }
     
-
+    custtomSession = session.fromPartition(customPartition)
     const mainWindowOptions = {
         resizable : options.resizable ,
         autoHideMenuBar: true,
@@ -53,12 +59,13 @@ function createWindow() {
             color: options.title_bar_color, 
             symbolColor: options.title_symbol_color,
         }, 
-        frame: options.title, 
+        frame: options.title, // Show or hide the title bar based on the title option
         webPreferences: {
             // if you want it be possible to change stuff in the engine backend , remove the line below
             // the nodeIntegration set to false , makes all dynamic changes from preload.js invalid
             // nodeIntegration: false ,
-            preload: path.join(__dirname, 'preload.js') ,
+            session : custtomSession ,
+            preload: path.join(__dirname, 'preload.js'),
             contextIsolation: true ,
             webviewTag: true ,
         }
@@ -79,11 +86,12 @@ function createWindow() {
     const customMenu = Menu.buildFromTemplate(customMenuTemplate);
     Menu.setApplicationMenu(customMenu);
 
-    
-    
+
     const isUrlAllowed = (newURL) => {
         return newURL.startsWith(options.url_style);
     };
+
+    
 
     var urlToLoad;
     if (options.strict_url){
@@ -101,7 +109,7 @@ function createWindow() {
             if (!isUrlAllowed(newURL)) {
                 event.preventDefault();
                 shell.openExternal(newURL);
-                mainWindow.loadURL(options.url_style); // Redirect back to the original URL
+                mainWindow.loadURL(options.url_style);
             }
         });
 
@@ -109,7 +117,7 @@ function createWindow() {
             if (!isUrlAllowed(newURL)) {
                 event.preventDefault();
                 shell.openExternal(newURL);
-                mainWindow.loadURL(options.url_style); // Redirect back to the original URL
+                mainWindow.loadURL(options.url_style);
             }
         });
     }
@@ -133,10 +141,10 @@ function createWindow() {
         const win = BrowserWindow.fromWebContents(webContents)
         console.log(value)
         if (value == 'true') {
-            
+           
             win.setFullScreen(true);
         } else {
-            
+          
             win.setFullScreen(false);
         }
     })
@@ -146,6 +154,7 @@ function createWindow() {
         const win = BrowserWindow.fromWebContents(webContents)
         if (value == 'true') {
             session.defaultSession.clearStorageData()
+            custtomSession.clearStorageData()
             win.close();
         }
     })
@@ -155,7 +164,7 @@ function createWindow() {
         const win = BrowserWindow.fromWebContents(webContents);
         titleBarOverlay = {
             color: back_color, 
-            symbolColor: symbol_color,
+            symbolColor: symbol_color, 
         }
         win.setTitleBarOverlay(titleBarOverlay);
     })
@@ -213,15 +222,18 @@ app.whenReady().then(() => {
 
 // just to make sure
 app.on('will-quit' , () => {
+    custtomSession.clearStorageData()
     session.defaultSession.clearStorageData()
 })
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
+        custtomSession.clearStorageData()
         session.defaultSession.clearStorageData().then(() => {
             app.quit();
         });
     }else{
+        custtomSession.clearStorageData()
         session.defaultSession.clearStorageData()
     }
 });

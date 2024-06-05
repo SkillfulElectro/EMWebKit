@@ -10,10 +10,14 @@ EMWebKit is a single app that serves as a dependency for your project, allowing 
 git clone https://github.com/SkillfulElectro/EMWebKit.git
 cd EMWebKit
 npm install
-npm run dist
+```
+to test the app before building :
+```shell
+npm start
 ```
 your EMWebKit is ready to use now just
 ```shell
+npm run dist
 cd dist
 ```
 and you will see the setup file :)

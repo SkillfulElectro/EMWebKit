@@ -1,5 +1,3 @@
-// main.js
-
 const { app, BrowserWindow, ipcMain , Menu , session } = require('electron');
 const path = require('path');
 const fs = require('fs');
@@ -10,7 +8,7 @@ const options = {
     width: 800,
     height: 600,
     resizable : true ,
-    title: true, // Changed default to true
+    title: true, 
     title_text: 'EMWebKit',
     title_style: 'hiddenInset',
     title_symbol_color: '',
@@ -57,6 +55,8 @@ function createWindow() {
         }, // Color for window control symbols (minimize, maximize, close)
         frame: options.title, // Show or hide the title bar based on the title option
         webPreferences: {
+            // if you want it be possible to change stuff in the engine backend , remove the line below
+            nodeIntegration: false ,
             preload: path.join(__dirname, 'preload.js')
         }
     };

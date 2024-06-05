@@ -4,7 +4,7 @@ const wchar_t* Flags::ConvertCharToWchar(const char* c) {
 	const size_t cSize = strlen(c) + 1;
 	wchar_t* wc = new wchar_t[cSize];
 
-	// Use mbstowcs_s for safer conversion
+	
 	size_t convertedChars = 0;
 	mbstowcs_s(&convertedChars, wc, cSize, c, cSize - 1);
 

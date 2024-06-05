@@ -64,18 +64,36 @@
             </pre>
         </code>
         <p>
-            To use this engine as the UI engine of your application, set the 'url' to the preferred URL where your app is hosted. Ensure that your server does not accept connections from unauthorized sources.
-            <br><br>
-            For a window without a title bar, set 'title' to false. If a title bar is desired, set 'title' to true and specify 'title_text'. Additionally, provide a path to the window icon in 'icon'.
-            <br><br>
-            When 'full_screen' is set to true, the window will occupy the entire screen, making 'posx' and 'posy' irrelevant.
-            <br><br>
-            To restrict navigation to other websites and keep users within your designated web environment, set 'strict_url' to true. Then, use 'url_style' to define the URL pattern that should be consistently checked upon navigation.
-            <br><br>
-            for changing title dynamically: window.Backend.setTitle(title) , for full screen : window.Backend.full_screen("true") , for closing the app : window.Backend.close_window("true") , for changing color of title bar overlay dynamically in your MUTEXIS_KIT.json file set the title_style to hidden and use this window.Backend.title_bar_overlay("#051be1" , "#051be1") func in the frontend , you can use title_style hiddenInset for normal one , for minimizing the window window.Backend.win_minimize('true') , for making window resizable window.Backend.win_resizable('true') and vice versa , for making window come to the center window.Backend.win_center() , for setting width and height window.Backend.win_size(1000 , 1000 , "false") if true is set window will change height smoothly
+            To use this engine as the UI component of your application, set the <code>'url'</code> to the preferred URL where your app is hosted. Ensure that your server does not accept connections from unauthorized sources.
+        </p>
+        <p>
+            For a window without a title bar, set <code>'title'</code> to <code>false</code>. If a title bar is desired, set <code>'title'</code> to <code>true</code> and specify <code>'title_text'</code>. Additionally, provide a path to the window icon in <code>'icon'</code>.
+        </p>
+        <p>
+            When <code>'full_screen'</code> is set to <code>true</code>, the window will occupy the entire screen, making <code>'posx'</code> and <code>'posy'</code> irrelevant.
+        </p>
+        <p>
+            To restrict navigation to other websites and keep users within your designated web environment, set <code>'strict_url'</code> to <code>true</code>. Then, use <code>'url_style'</code> to define the URL pattern that should be consistently checked upon navigation.
+        </p>
+        <p>
+            For dynamic title changes: <code>window.Backend.setTitle(title)</code>
+            <br>
+            For full-screen mode: <code>window.Backend.full_screen("true")</code>
+            <br>
+            For closing the app: <code>window.Backend.close_window("true")</code>
+            <br>
+            To change the color of the title bar overlay dynamically, set <code>'title_style'</code> to <code>hidden</code> in your <code>MUTEXIS_KIT.json</code> file and use <code>window.Backend.title_bar_overlay("#051be1", "#051be1")</code> in the frontend. You can also use <code>title_style hiddenInset</code> for the normal title bar.
+            <br>
+            For minimizing the window: <code>window.Backend.win_minimize('true')</code>
+            <br>
+            For making the window resizable: <code>window.Backend.win_resizable('true')</code> (and vice versa)
+            <br>
+            To center the window: <code>window.Backend.win_center()</code>
+            <br>
+            To set the width and height: <code>window.Backend.win_size(1000, 1000, "false")</code> (if <code>true</code> is set, the window will change height smoothly)
         </p>
     </div>
-    <!--
+    <!-- TESTS
     <button id="btn1" type="button">full_screen</button>
     <script>
         const fss = document.getElementById('btn1')

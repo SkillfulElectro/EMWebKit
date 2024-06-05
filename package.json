@@ -1,0 +1,35 @@
+{
+  "name": "emwebkit",
+  "version": "1.0.0",
+  "description": "simple cli app, to render UI of your application which is based on web tech",
+  "main": "main.js",
+  "author": "ElectroMutex",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^30.0.9",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.electromutex.EMWebKit",
+    "mac": {
+      "icon": "_377ccaee-715c-495c-9519-0eb8818d49da_prev_ui.png"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "_377ccaee-715c-495c-9519-0eb8818d49da_prev_ui.png"
+    },
+    "linux": {
+      "icon": "_377ccaee-715c-495c-9519-0eb8818d49da_prev_ui.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

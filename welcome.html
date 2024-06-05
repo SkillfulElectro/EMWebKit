@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="hide-scrollbar">
+<head>
+    <!--<title>Welcome to Mutexis UI Engine</title>-->
+    <style>
+        html, body {
+            width: 100vw; /* Set the width to 100% of the viewport width */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            overflow-y: auto; /* Enable vertical scrolling if needed */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 600px;
+            margin: auto; /* Center the content horizontally */
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge, and Firefox */
+        .hide-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Optional: Add these styles to the container to ensure it's still scrollable */
+        .hide-scrollbar {
+            overflow-y: scroll;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <header><h1 style="text-align: center;">Welcome to EMWebKit Engine</h1></header>
+        <p style="text-align: center;">remember to add the installation path of engine to env vars <br> latest call command for engine:</p>
+        <code>
+            EMWebKit.exe -CONFIG X:/path/to/your/MUTEXIS_KIT.json
+        </code>
+        <h4 style="text-align: center;">MUTEXIS_KIT.js:</h4>
+        <code>
+            <pre>
+                {<br>
+                    "url": "your preferred url",<br>
+                    "width": 1024,<br>
+                    "height": 768,<br>
+                    "resizable" : false,<br>
+                    "title": false,<br>
+                    "title_text": "My App",<br>
+                    "title_style": "hiddenInset",<br>
+                    "title_symbol_color": "",<br>
+                    "title_bar_color": "",<br>
+                    "full_screen": false,<br>
+                    "center": false,<br>
+                    "posx": 0,<br>
+                    "posy": 0,<br>
+                    "strict_url": false,<br>
+                    "url_style": "https://www.google.com/",<br>
+                    "icon": ""<br>
+                }
+            </pre>
+        </code>
+        <p>
+            To use this engine as the UI engine of your application, set the 'url' to the preferred URL where your app is hosted. Ensure that your server does not accept connections from unauthorized sources.
+            <br><br>
+            For a window without a title bar, set 'title' to false. If a title bar is desired, set 'title' to true and specify 'title_text'. Additionally, provide a path to the window icon in 'icon'.
+            <br><br>
+            When 'full_screen' is set to true, the window will occupy the entire screen, making 'posx' and 'posy' irrelevant.
+            <br><br>
+            To restrict navigation to other websites and keep users within your designated web environment, set 'strict_url' to true. Then, use 'url_style' to define the URL pattern that should be consistently checked upon navigation.
+            <br><br>
+            for changing title dynamically: window.Backend.setTitle(title) , for full screen : window.Backend.full_screen("true") , for closing the app : window.Backend.close_window("true") , for changing color of title bar overlay dynamically in your MUTEXIS_KIT.json file set the title_style to hidden and use this window.Backend.title_bar_overlay("#051be1" , "#051be1") func in the frontend , you can use title_style hiddenInset for normal one , for minimizing the window window.Backend.win_minimize('true') , for making window resizable window.Backend.win_resizable('true') and vice versa
+        </p>
+    </div>
+    <!--
+    <button id="btn1" type="button">full_screen</button>
+    <script>
+        const fss = document.getElementById('btn1')
+        fss.addEventListener('click', () => {
+            window.Backend.win_resizable('false')
+        })
+    </script>
+    -->
+    <!--
+    Title: <input id="title"/>
+    <button id="btn" type="button">Set</button>
+    <button id="btn1" type="button">full_screen</button>
+    <script>
+        const setButton = document.getElementById('btn')
+        const titleInput = document.getElementById('title')
+        setButton.addEventListener('click', () => {
+            const title = titleInput.value
+            window.Backend.setTitle(title)
+        })
+
+        const fss = document.getElementById('btn1')
+        fss.addEventListener('click', () => {
+            window.Backend.close_window("true")
+        })
+    </script>
+    -->
+</body>
+</html>

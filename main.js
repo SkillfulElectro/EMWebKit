@@ -28,10 +28,13 @@ function loadConfig(configPath) {
     try {
         const configContents = fs.readFileSync(configPath, 'utf8');
         const configOptions = JSON.parse(configContents);
-        // Merge default options with the ones from the config file
+        
         Object.assign(options, configOptions);
     } catch (error) {
         console.error('Error loading config file:', error);
+    }finally {
+      
+        fs.closeSync(fs.openSync(configPath, 'r'));
     }
 }
 

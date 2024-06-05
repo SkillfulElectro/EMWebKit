@@ -56,7 +56,8 @@ function createWindow() {
         frame: options.title, 
         webPreferences: {
             // if you want it be possible to change stuff in the engine backend , remove the line below
-            nodeIntegration: false ,
+            // the nodeIntegration set to false , makes all dynamic changes from preload.js invalid
+            // nodeIntegration: false ,
             preload: path.join(__dirname, 'preload.js')
         }
     };

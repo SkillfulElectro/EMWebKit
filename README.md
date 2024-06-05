@@ -1,5 +1,5 @@
 # EMWebKit
-![EMWebKit Logo](_377ccaee-715c-495c-9519-0eb8818d49da_prev_ui.png)
+[EMWebKit Logo](_377ccaee-715c-495c-9519-0eb8818d49da_prev_ui.png)
 
 Working on a cross-language project? Want to use web technologies to create your user interfaces? Need to integrate your favorite frameworks? Want a supportive community? Look no further—**EMWebKit** is here for you!
 

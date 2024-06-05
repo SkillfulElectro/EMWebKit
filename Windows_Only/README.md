@@ -1,6 +1,7 @@
 # Native EMWebKit : A Retrospective
 
 Project Status: Development Halted
+this dir is named Windows_Only because project stopped on Windows , and the source code is based on Windows OS
 
 ## Project Objective
 - The Native EMWebKit project aimed to provide a seamless interface for developers to create GUI applications that leverage native webviews on various systems. By integrating with the system’s webview, developers could effortlessly incorporate web content into their applications.

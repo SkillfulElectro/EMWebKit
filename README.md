@@ -1,6 +1,6 @@
 <p align="center">
   <img src="_377ccaee-715c-495c-9519-0eb8818d49da_prev_ui.png"/>
-  # EMWebKit
+  <h1 style="text-align:center;">EMWebKit</h1>
 </p>
 
 

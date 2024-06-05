@@ -59,7 +59,8 @@ function createWindow() {
             // the nodeIntegration set to false , makes all dynamic changes from preload.js invalid
             // nodeIntegration: false ,
             preload: path.join(__dirname, 'preload.js') ,
-            contextIsolation: true
+            contextIsolation: true ,
+            webviewTag: true ,
         }
     };
     

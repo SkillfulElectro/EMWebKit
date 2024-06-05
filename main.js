@@ -32,9 +32,6 @@ function loadConfig(configPath) {
         Object.assign(options, configOptions);
     } catch (error) {
         console.error('Error loading config file:', error);
-    }finally {
-      
-        fs.closeSync(fs.openSync(configPath, 'r'));
     }
 }
 

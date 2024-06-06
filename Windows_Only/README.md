@@ -9,7 +9,7 @@ this dir is named Windows_Only because project stopped on Windows , and the sour
 - The Native EMWebKit project aimed to provide a seamless interface for developers to create GUI applications that leverage native webviews on various systems. By integrating with the system’s webview, developers could effortlessly incorporate web content into their applications.
 
 ## Key Focus Areas
-- Native EMWebKit acted as a bridge between applications and the native webview. with one difference than EMWebKit and its having no dependency like whole Chromium project
+- Native EMWebKit acted as a bridge between applications and the native webview. with one difference than EMWebKit and its being more lightweight because it would depend on the OS
 
 ## Challenges Encountered
 ### Quality of Microsoft Edge WebView2:

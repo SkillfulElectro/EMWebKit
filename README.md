@@ -7,8 +7,7 @@ EMWebKit is a single app that serves as a dependency for your project, allowing 
 
 ## Why Choose EMWebKit for Your GUI Applications?
 - In the diverse landscape of JavaScript frameworks suitable for developing GUI applications, EMWebKit emerges as a standout choice. Its cross-language nature sets it apart, offering the flexibility to integrate seamlessly with various programming languages. This feature ensures that regardless of your preferred coding language, EMWebKit adapts to your needs, providing a consistent and efficient development experience.
-
-Moreover, EMWebKit’s simplicity and efficiency are unmatched. It eliminates the need for numerous dependencies, requiring just a single dependency to power your entire GUI system. This approach not only streamlines the development process but also significantly lightens your application’s load, leading to a more agile and responsive user experience.
+- Moreover, EMWebKit’s simplicity and efficiency are unmatched. It eliminates the need for numerous dependencies, requiring just a single dependency to power your entire GUI system. This approach not only streamlines the development process but also significantly lightens your application’s load, leading to a more agile and responsive user experience.
 
 
 [History of EMWebKit](https://skillfulelectro.github.io/EMWebKit/Windows_Only)

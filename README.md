@@ -45,7 +45,10 @@ Tap into the vast ecosystem of web frameworks and libraries.
 
 
 ## Upcoming features :
-- extensions are coming to make everything secure , stay tuned ; not gonna let anyone steal your ui source code ;)
+- extensions
+- bindings with Qt
+- bindings with GTK
+  
 
 ## Notes:
 - this project is based on the ElectronJS , Electron-builder and Chromium . these are choosen because of simplicity and cross-platform capabilities of them

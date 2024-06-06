@@ -5,6 +5,8 @@ Working on a cross-language project? Want to use web technologies to create your
 
 EMWebKit is a single app that serves as a dependency for your project, allowing you to create GUI apps with any programming language. When you start the app for the first time, it will guide you based on the latest Chromium release.
 
+[History of EMWebKit](https://skillfulelectro.github.io/EMWebKit/Windows_Only)
+
 ## Installation Steps:
 ```shell
 git clone https://github.com/SkillfulElectro/EMWebKit.git

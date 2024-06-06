@@ -1,9 +1,15 @@
-// main.js
-
 const { app, BrowserWindow, ipcMain , Menu , session , shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
+// just to make everything be clear
+// in the future for each gui app , this data will be saved where 
+// the app wants !
+const appDirectory = path.dirname(app.getAppPath());
+const customDirectoryPath = path.join(appDirectory, 'RenderCaches');
+app.setPath('userData', customDirectoryPath);
+app.setPath('appData', customDirectoryPath);
+app.setPath('temp', customDirectoryPath);
 
 const options = {
     url: '',

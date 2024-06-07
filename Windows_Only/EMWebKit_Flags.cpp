@@ -1,4 +1,4 @@
-#include "Flags.h"
+#include "EMWebKit_Flags.h"
 
 const wchar_t* Flags::ConvertCharToWchar(const char* c) {
 	const size_t cSize = strlen(c) + 1;

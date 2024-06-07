@@ -46,8 +46,10 @@ Tap into the vast ecosystem of web frameworks and libraries.
 
 ## Upcoming features :
 - extensions
+- Android
 - bindings with Qt
 - bindings with GTK
+- iOS
   
 
 ## Notes:

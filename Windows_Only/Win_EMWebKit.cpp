@@ -8,7 +8,7 @@
 
 
 #include "WebView2.h"
-#include "Flags.h"
+#include "EMWebKit_Flags.h"
 
 
 using namespace Microsoft::WRL;

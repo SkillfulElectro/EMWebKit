@@ -1,3 +1,6 @@
+<head>
+  <link rel="icon" type="image/x-icon" href="icons/windows.ico">
+</head>
 # EMWebKit
 ![EMWebKit Logo](icons/main_icon.png)
 

@@ -13,6 +13,10 @@ EMWebKit is a single app that serves as a dependency for your project, allowing 
 [History of EMWebKit](https://skillfulelectro.github.io/EMWebKit/Windows_Only)
 
 ## Installation Steps:
+### Tested with :
+- Node.js v20.14.0
+- npm v10.7.0
+
 ```shell
 git clone https://github.com/SkillfulElectro/EMWebKit.git
 cd EMWebKit

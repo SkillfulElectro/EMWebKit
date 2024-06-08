@@ -54,7 +54,7 @@ Tap into the vast ecosystem of web frameworks and libraries.
 - bindings with Qt
 - bindings with GTK
 - iOS
-- EMWebKitOS
+- Embedded (EMWebKitOS)
   
 
 ## Notes:

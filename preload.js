@@ -10,4 +10,6 @@ contextBridge.exposeInMainWorld('Backend', {
   win_center: () => ipcRenderer.send('win-center'),
   win_size: (height , width , animate) => ipcRenderer.send('win-size' , height , width , animate),
   win_icon : (ic_path) => ipcRenderer.send('win-icon' , ic_path),
+  // experimental
+  extension : async (value) => await ipcRenderer.invoke('extension' , value),
 })

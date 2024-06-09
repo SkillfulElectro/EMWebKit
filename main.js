@@ -52,11 +52,11 @@ function createWindow() {
     }
 
     // experimental
-    const extension_file = process.argv.indexOf('-EXTENSION');
-    if (extension_file !== -1 && process.argv[configIndex + 1]) {
+    // const extension_file = process.argv.indexOf('-EXTENSION');
+    // if (extension_file !== -1 && process.argv[configIndex + 1]) {
         // ongoing project
         // process.argv[extension_file + 1]
-    }
+    // }
     
     custtomSession = session.fromPartition(customPartition)
     const mainWindowOptions = {

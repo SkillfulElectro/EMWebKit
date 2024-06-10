@@ -1,6 +1,6 @@
 # EMWebKit
 
-<p align="center" height="25%">
+<p align="center" style="height:25vh;">
   <picture>
     <img alt="EMWebKit Logo" src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/main_icon.png" style="height:25vh;">
   </picture>

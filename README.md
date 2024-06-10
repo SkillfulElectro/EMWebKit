@@ -1,6 +1,6 @@
 # EMWebKit
 
-<img src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/main_icon.png" alt="EMWebKit Logo" height="200" align="center" />
+<img src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/main_icon.png" alt="EMWebKit Logo" height="200" align="right" />
 
 
 Working on a cross-language project? Want to use web technologies to create your user interfaces? Need to integrate your favorite frameworks? Want a supportive community? Look no further—**EMWebKit** is here for you!

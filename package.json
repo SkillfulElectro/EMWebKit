@@ -1,6 +1,6 @@
 {
   "name": "emwebkit",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "simple cli app, to render UI of your application which is based on web tech",
   "main": "main.js",
   "author": "ElectroMutex",
@@ -16,7 +16,13 @@
   "build": {
     "appId": "com.electromutex.EMWebKit",
     "mac": {
-      "icon": "icons/macos.icns"
+      "icon": "icons/macos.icns",
+      "hardenedRuntime": true,
+      "entitlements": "entitlements.mac.plist", 
+      "extendInfo": { 
+        "NSMicrophoneUsageDescription": "This app requires access to the microphone for audio recording.", 
+        "NSCameraUsageDescription": "This app requires access to the camera for video recording."
+      }
     },
     "win": {
       "target": [

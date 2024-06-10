@@ -1,4 +1,4 @@
-<img src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/windows.ico" height="100" align="right" />
+<img src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/main_icon.png" height="100" align="right" />
 
 
 # EMWebKit

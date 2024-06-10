@@ -2,7 +2,7 @@
 
 <p align="center">
   <picture>
-    <img alt="EMWebKit Logo" src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/main_icon.png" style="max-width: 25%;">
+    <img alt="EMWebKit Logo" src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/main_icon.png" style="width: 25%;">
   </picture>
   <br/>
   <br/>

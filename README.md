@@ -2,12 +2,12 @@
 
 <p align="center">
   <picture>
-    <img alt="EMWebKit Logo" src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/main_icon.png" style="width: 25vw;">
+    <img alt="EMWebKit Logo" src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/main_icon.png" style="height:25vh;">
   </picture>
 </p>
 
 
-Working on a cross-language project? Want to use web technologies to create your user interfaces? Need to integrate your favorite frameworks? Want a supportive community? Look no further—**EMWebKit** is here for you!
+Working on a cross-language project? Want to use web technologies to create your user interfaces? Need to integrate your favorite frameworks? Want a supportive community? Look no further **EMWebKit** is here for you!
 
 EMWebKit is a single app that serves as a dependency for your project, allowing you to create GUI apps with any programming language. When you start the app for the first time, it will guide you based on the latest Chromium release.
 

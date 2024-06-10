@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain , Menu , session , shell } = require('electron');
+const { app, BrowserWindow, ipcMain , Menu , session , shell , systemPreferences } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
@@ -221,6 +221,26 @@ function createWindow() {
         const win = BrowserWindow.fromWebContents(webContents)
         win.setIcon(ic_path);
     })
+
+    ipcMain.handle('ask-camera-permission', async () => { 
+            try { 
+                const cameraPermission = await systemPreferences.askForMediaAccess('camera');
+                return cameraPermission; // true if granted, false if denied 
+            } catch (error) { 
+                console.error('Error requesting camera permission:', error); 
+                return false; // Return false if there is an error 
+            } 
+    });
+
+    ipcMain.handle('ask-microphone-permission', async () => { 
+        try { 
+            const microphonePermission = await systemPreferences.askForMediaAccess('microphone'); 
+            return microphonePermission; // true if granted, false if denied 
+        } catch (error) { 
+            console.error('Error requesting microphone permission:', error); 
+            return false; // Return false if there is an error 
+        } 
+    });
 }
 
 app.whenReady().then(() => {

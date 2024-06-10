@@ -1,4 +1,5 @@
 # EMWebKit
+<img src="https://content.arduino.cc/website/Arduino_logo_teal.svg" height="100" align="right" />
 ![EMWebKit Logo](icons/main_icon.png)
 
 Working on a cross-language project? Want to use web technologies to create your user interfaces? Need to integrate your favorite frameworks? Want a supportive community? Look no further—**EMWebKit** is here for you!

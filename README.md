@@ -1,4 +1,4 @@
-# EMWebKit
+<h1 style="text-align:center;">EMWebKit</h1>
 
 <p align="center" style="height:25vh;">
   <picture>

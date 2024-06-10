@@ -4,8 +4,6 @@
   <picture>
     <img alt="EMWebKit Logo" src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/main_icon.png" style="width: 25vw;">
   </picture>
-  <br/>
-  <br/>
 </p>
 
 

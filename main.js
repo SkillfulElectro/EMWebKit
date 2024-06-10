@@ -222,7 +222,7 @@ function createWindow() {
         win.setIcon(ic_path);
     })
 
-    ipcMain.handle('ask-camera-permission', async () => { 
+    ipcMain.handle('get-camera-access', async () => { 
             try { 
                 const cameraPermission = await systemPreferences.askForMediaAccess('camera');
                 return cameraPermission; // true if granted, false if denied 
@@ -232,7 +232,7 @@ function createWindow() {
             } 
     });
 
-    ipcMain.handle('ask-microphone-permission', async () => { 
+    ipcMain.handle('get-microphone-access', async () => { 
         try { 
             const microphonePermission = await systemPreferences.askForMediaAccess('microphone'); 
             return microphonePermission; // true if granted, false if denied 

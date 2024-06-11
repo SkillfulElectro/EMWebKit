@@ -106,13 +106,31 @@
             if you want to use webview tag , <a href="https://www.electronjs.org/docs/latest/api/webview-tag">Visit</a>
         </p>
     </div>
-    <!-- TESTS
+    <!-- TESTS 
+    <h1>Access to Camera and Microphone</h1>
+    <video autoplay></video>
+    <script>
+        if (window.Backend.getMicrophoneAccess() && window.Backend.getCameraAccess()){
+            navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+            .then(function(stream) {
+                var video = document.querySelector('video');
+                video.srcObject = stream;
+                video.onloadedmetadata = function(e) {
+                video.play();
+                };
+            })
+            .catch(function(err) {
+                console.log(err.name + ": " + err.message);
+            });
+        }
+    </script>
+    
     <button id="btn1" type="button">full_screen</button>
     <script>
         const fss = document.getElementById('btn1')
         fss.addEventListener('click', () => {
             
-            window.Backend.win_size(1000 , 1000 , "false")
+            window.Backend.getMicrophoneAccess()
         })
     </script>
     -->

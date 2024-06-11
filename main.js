@@ -27,7 +27,7 @@ const options = {
     posy: 0,
     strict_url: true,
     url_style: `file://${path.join(__dirname, 'welcome.html')}`,
-    icon : '_8452d7c4-ac7a-42e0-9237-5858d1716314.jpeg'
+    icon : 'icons/windows.ico'
 };
 
 const currentTime = new Date().getTime(); // Get the current timestamp
@@ -223,6 +223,7 @@ function createWindow() {
     })
 
     ipcMain.handle('get-camera-access', async () => { 
+        if (process.platform === 'darwin'){
             try { 
                 const cameraPermission = await systemPreferences.askForMediaAccess('camera');
                 return cameraPermission; // true if granted, false if denied 
@@ -230,16 +231,23 @@ function createWindow() {
                 console.error('Error requesting camera permission:', error); 
                 return false; // Return false if there is an error 
             } 
+        }else{
+            return true
+        }
     });
 
     ipcMain.handle('get-microphone-access', async () => { 
-        try { 
-            const microphonePermission = await systemPreferences.askForMediaAccess('microphone'); 
-            return microphonePermission; // true if granted, false if denied 
-        } catch (error) { 
-            console.error('Error requesting microphone permission:', error); 
-            return false; // Return false if there is an error 
-        } 
+        if (process.platform === 'darwin'){
+            try { 
+                const microphonePermission = await systemPreferences.askForMediaAccess('microphone'); 
+                return microphonePermission; // true if granted, false if denied 
+            } catch (error) { 
+                console.error('Error requesting microphone permission:', error); 
+                return false; // Return false if there is an error 
+            } 
+        }else{
+            return true
+        }
     });
 }
 

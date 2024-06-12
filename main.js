@@ -252,6 +252,14 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+    const install_check = process.argv.indexOf('-v');
+
+    if (install_check !== -1) {
+        console.log('1.0.8');
+        return;
+    }
+
+
     createWindow();
 
     app.on('activate', () => {

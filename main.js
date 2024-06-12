@@ -35,13 +35,20 @@ const customPartition = `my-session-${currentTime}`;
 var custtomSession
 
 function loadConfig(configPath) {
-    try {
-        const configContents = fs.readFileSync(configPath, 'utf8');
-        const configOptions = JSON.parse(configContents);
+
+    if (fs.existsSync(configPath)){
+        if (fs.statSync(configPath).isDirectory()) { 
+            configPath = path.join(configPath, 'MUTEXIS_KIT.json'); 
+        }
+    
+        try {
+            const configContents = fs.readFileSync(configPath, 'utf8');
+            const configOptions = JSON.parse(configContents);
         // Merge default options with the ones from the config file
-        Object.assign(options, configOptions);
-    } catch (error) {
-        console.error('Error loading config file:', error);
+            Object.assign(options, configOptions);
+        } catch (error) {
+            console.error('Error loading config file:', error);
+        }
     }
 }
 

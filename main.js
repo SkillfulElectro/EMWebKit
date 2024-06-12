@@ -271,7 +271,8 @@ app.whenReady().then(() => {
     const install_check = process.argv.indexOf('-v');
 
     if (install_check !== -1) {
-        console.log('1.0.8');
+        console.log('1.0.9');
+        app.quit();
         return;
     }
 
@@ -287,8 +288,12 @@ app.whenReady().then(() => {
 
 // just to make sure
 app.on('will-quit' , () => {
-    custtomSession.clearStorageData()
-    session.defaultSession.clearStorageData()
+    try {
+        custtomSession.clearStorageData()
+        session.defaultSession.clearStorageData()
+    }catch(error){
+        
+    }
 })
 
 app.on('window-all-closed', () => {

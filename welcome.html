@@ -39,9 +39,21 @@
     <div class="content">
         <header><h1 style="text-align: center;">Welcome to EMWebKit Engine</h1></header>
         <p style="text-align: center;">remember to add the installation path of engine to env vars <br> latest call command for engine:</p>
+        <p>direct path:</p>
         <code>
             EMWebKit.exe -CONFIG X:/path/to/your/MUTEXIS_KIT.json
         </code>
+        <p>in direct mode , path can be to any .json file</p>
+        <p>indirect path:</p>
+        <code>
+            EMWebKit.exe -CONFIG X:/path/to/dir/which/MUTEXIS_KIT.json/lives/in/it
+        </code>
+        <p>in indirect mode , path is to a dir which MUTEXIS_KIT.json is there and system will check for it</p>
+        <p>default path:</p>
+        <code>
+            EMWebKit.exe
+        </code>
+        <p>in default mode system checks if the MUTEXIS_KIT.json file exists in the process dir or not and uses it</p>
         <h4 style="text-align: center;">MUTEXIS_KIT.js:</h4>
         <code>
             <pre>

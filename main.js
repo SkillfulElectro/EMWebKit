@@ -52,7 +52,7 @@ function loadConfig(configPath) {
     }
 }
 
-function config_check { 
+function config_check() { 
     const filePath = path.join(process.cwd(), 'MUTEXIS_KIT.json'); // Check if the file exists in the current directory 
     if (fs.existsSync(filePath)) { 
         loadConfig(filePath);

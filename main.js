@@ -45,10 +45,19 @@ function loadConfig(configPath) {
     }
 }
 
+function config_check { 
+    const filePath = path.join(process.cwd(), 'MUTEXIS_KIT.json'); // Check if the file exists in the current directory 
+    if (fs.existsSync(filePath)) { 
+        loadConfig(filePath);
+    }
+}
+
 function createWindow() {
     const configIndex = process.argv.indexOf('-CONFIG');
     if (configIndex !== -1 && process.argv[configIndex + 1]) {
         loadConfig(process.argv[configIndex + 1]);
+    }else{
+        config_check()
     }
 
     // experimental

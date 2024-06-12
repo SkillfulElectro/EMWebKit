@@ -1,6 +1,6 @@
 {
   "name": "emwebkit",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "simple cli app, to render UI of your application which is based on web tech",
   "main": "main.js",
   "author": "ElectroMutex",

@@ -1,4 +1,4 @@
-<h1 align="center">EMWebKit</h1> [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+<h1 align="center">EMWebKit</h1> 
 
 
 <p align="center" style="height:25vh;">
@@ -6,6 +6,8 @@
     <img alt="EMWebKit Logo" src="https://github.com/SkillfulElectro/EMWebKit/blob/main/icons/main_icon.png" style="height:25vh;">
   </picture>
 </p>
+
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 
 Working on a cross-language project? Want to use web technologies to create your user interfaces? Need to integrate your favorite frameworks? Want a supportive community? Look no further **EMWebKit** is here for you!
